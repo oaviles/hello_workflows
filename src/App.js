@@ -7,15 +7,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Demo powered by OA
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Azure Static WebSite
         </a>
       </header>
     </div>
