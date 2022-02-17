@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "staticSites_nam3": {
+            "value": "oastaticwebapp01"
+        },
+      "github_repo": {
+            "value": "https://github.com/oaviles/demolab1"
+        }
+    }
+}
