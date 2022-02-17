@@ -6,25 +6,19 @@
             "defaultValue": "oao001",
             "type": "String"
         },
-        {
-        "github_repo": {
-            "defaultValue": "https://your-github_repo",
-            "type": "String"
-        }
-    },
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.Web/staticSites",
             "apiVersion": "2021-03-01",
             "name": "[parameters('staticSites_name')]",
-            "location": "Central US",
+            "location": "East US",
             "sku": {
                 "name": "Free",
                 "tier": "Free"
             },
             "properties": {
-                "repositoryUrl": "[parameters('github_repo')]",
+                "repositoryUrl": "https://github.com/oaviles/demolab1",
                 "branch": "main",
                 "stagingEnvironmentPolicy": "Enabled",
                 "allowConfigFileUpdates": true,
