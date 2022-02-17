@@ -3,10 +3,12 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "staticSites_name": {
+            "defaultValue": "oao001",
             "type": "String"
         },
-      {
+        {
         "github_repo": {
+            "defaultValue": "https://your-github_repo",
             "type": "String"
         }
     },
