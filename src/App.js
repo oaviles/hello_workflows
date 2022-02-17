@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Azure Static Web Apps
+          Azure Static Web Apps V1.0
         </a>
       </header>
     </div>
