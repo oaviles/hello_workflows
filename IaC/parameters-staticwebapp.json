@@ -4,9 +4,6 @@
     "parameters": {
         "staticSites_name": {
             "value": "oastaticwebapp01"
-        },
-      "github_repo": {
-            "value": "https://github.com/oaviles/demolab1"
         }
     }
 }
