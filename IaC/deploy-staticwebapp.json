@@ -2,17 +2,18 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "staticSites_name": {
-            "defaultValue": "oao001",
+        "staticSites_oademo01_name": {
+            "defaultValue": "oademo01",
             "type": "String"
-        },
+        }
+    },
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.Web/staticSites",
             "apiVersion": "2021-03-01",
-            "name": "[parameters('staticSites_name')]",
-            "location": "East US",
+            "name": "[parameters('staticSites_oademo01_name')]",
+            "location": "Central US",
             "sku": {
                 "name": "Free",
                 "tier": "Free"
