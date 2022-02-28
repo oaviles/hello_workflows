@@ -10,3 +10,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployment
 - [Use GitHub Actions to deploy](https://github.com/marketplace/actions/azure-static-web-apps-deploy)
+
+#### Version 1.0
