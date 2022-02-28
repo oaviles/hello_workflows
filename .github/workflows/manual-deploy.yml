@@ -25,3 +25,13 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@main
+        with:
+        # Artifact name
+          name: static-web-app-demo
+          # A file, directory or wildcard pattern that describes what to upload
+          path: public/
+          # The desired behavior if no files are found using the provided path
+          retention-days: 1
