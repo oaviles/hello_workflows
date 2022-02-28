@@ -3,6 +3,8 @@ name: Manual Deployment Web Apps CI/CD
 on:
   workflow_dispatch:
     
+env:
+  package-version: ${{ github.sha }}
 
 jobs:
   build_and_deploy_job:
@@ -33,7 +35,7 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
         # Artifact name
-          name: static-web-app-demo
+          name: static-web-app-demo-${{ github.sha }}
           # A file, directory or wildcard pattern that describes what to upload
           path: public/
           # The desired behavior if no files are found using the provided path
