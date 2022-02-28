@@ -25,9 +25,12 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-          
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@main
+  
+  upload_a_build_artifact:
+    runs-on: ubuntu-latest
+    name: Upload a Build Artifact
+    steps:
+      - uses: actions/upload-artifact@main
         with:
         # Artifact name
           name: static-web-app-demo
