@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
         # Artifact name
-          name: ${github.sha}.oa
+          name: ${{ github.sha }}.oa
           # A file, directory or wildcard pattern that describes what to upload
           path: public/
           # The desired behavior if no files are found using the provided path
