@@ -8,4 +8,6 @@ jobs:
 
     steps:
       - name: call netcore-action
-        uses: oaviles/container_action@v2
+        uses: oaviles/container_action@v3
+        with:
+          message: '---- Type your messsage here ------'
