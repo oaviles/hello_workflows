@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: call netcore-action
+      - name: call netcore-action v2
+        uses: oaviles/container_action@v2
+
+      - name: call netcore-action v3
         uses: oaviles/container_action@v3
         with:
           args: '----Type_your_messsage_here------'
