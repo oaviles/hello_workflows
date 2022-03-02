@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: call netcore-action
-        uses: oaviles/container_action@v1
+        uses: oaviles/container_action@v2
