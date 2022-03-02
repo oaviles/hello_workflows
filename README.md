@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Steps: In the project sample
 
 - [Create React App](https://github.com/facebook/create-react-app)
-- [Create a GitBub Repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+- [Create a GitHub Repo](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 - [Building your first static site in the Azure portal](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=react)
 
 ## Deployment
