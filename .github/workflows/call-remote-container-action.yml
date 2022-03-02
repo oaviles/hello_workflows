@@ -13,4 +13,4 @@ jobs:
       - name: call netcore-action v3
         uses: oaviles/container_action@v3
         with:
-          args: '----Type_your_messsage_here------'
+          args: '----Type_your_messsage_here_v3------'
