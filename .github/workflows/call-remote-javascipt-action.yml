@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: call javascript-action v1
+      - name: call javascript-action v1.1
         id: javascriptaction
-        uses: oaviles/javascript_action@v1
+        uses: oaviles/javascript_action@v1.1
         
       - name: Get the output time
         run: echo "The time was ${{ steps.javascriptaction.outputs.time }}"
