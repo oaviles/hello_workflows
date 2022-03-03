@@ -10,6 +10,8 @@ jobs:
       - name: call javascript-action v1.1
         id: javascriptaction
         uses: oaviles/javascript_action@v1.1
+        with:
+          message: '--- Your message here: OA ---'
         
       - name: Get the output time
         run: echo "The time was ${{ steps.javascriptaction.outputs.time }}"
