@@ -1,0 +1,15 @@
+name: Call JavaScipt Action
+
+on: workflow_dispatch
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: call javascript-action v1
+        id: javascriptaction
+        uses: oaviles/javascript_action@v1
+        
+      - name: Get the output time
+        run: echo "The time was ${{ steps.javascriptaction.outputs.time }}"
