@@ -84,3 +84,14 @@ jobs:
         uses: oaviles/javascript_action@v1.1
         with:
           message: 'Deploy Dev Env'
+
+  create-issue-dev-env:
+    if: ${{ failure() }}
+    needs: dev-environment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy IaC 
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Deploy IaC'
