@@ -105,16 +105,6 @@ jobs:
         with:
           message: 'Create Issue QA Env deployment Fail'
           
-  create-issue-prod-env:
-    if: ${{ failure() }}
-    needs: prod-environment
-    runs-on: ubuntu-latest
-    steps:
-      - name: Production Env deployment Fail
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Create Issue Production Env deployment Fail'
-          
   run-load-testing-prod-env:
     if: ${{ success() }}
     needs: prod-environment
@@ -124,4 +114,14 @@ jobs:
         uses: oaviles/javascript_action@v1.1
         with:
           message: 'Run Load Testing on Production Env'
+          
+  create-issue-prod-env:
+    if: ${{ failure() }}
+    needs: prod-environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Production Env deployment Fail
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Create Issue Production Env deployment Fail'
           
