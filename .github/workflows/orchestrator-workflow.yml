@@ -107,7 +107,7 @@ jobs:
           
   create-issue-prod-env:
     if: ${{ failure() }}
-    needs: qa-environment
+    needs: prod-environment
     runs-on: ubuntu-latest
     steps:
       - name: Production Env deployment Fail
