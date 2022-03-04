@@ -30,6 +30,8 @@ jobs:
           message: 'Deploy Dev Env'
           
   qa-environment:
+    if: ${{ failure() }}
+    needs: dev-environment
     runs-on: ubuntu-latest
 
     steps:
