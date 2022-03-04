@@ -3,7 +3,7 @@ name: Orchestrator Workflow
 on: workflow_dispatch
 
 jobs:
-  dev-enviroment:
+  dev-environment:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,7 @@ jobs:
         with:
           message: 'Deploy Dev Env'
           
-  qa-enviroment:
+  qa-environment:
     runs-on: ubuntu-latest
 
     steps:
@@ -49,7 +49,33 @@ jobs:
         with:
           message: 'Test'
           
-      - name: Deploy Dev Enviroment
+      - name: Deploy QA Enviroment
+        id: javascriptaction
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Deploy Dev Env'
+          
+  prod-environment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy IaC 
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Deploy IaC'
+    
+    
+      - name: Build 
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build'
+        
+      - name: Test 
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Test'
+          
+      - name: Deploy Prod Enviroment
         id: javascriptaction
         uses: oaviles/javascript_action@v1.1
         with:
