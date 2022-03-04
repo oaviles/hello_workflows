@@ -64,12 +64,12 @@ jobs:
     strategy:
       matrix:
         include: 
-          - node-version: 10.x
-            site: "prod"
-            datacenter: "site-a"
-          - node-version: 12.x
-            site: "dev"
-            datacenter: "site-b"      
+          - region-1: east
+            site: "EastUS"
+            datacenter: "site-east"
+          - region-2: west
+            site: "WestUS"
+            datacenter: "site-west"      
 
     steps:
       - name: Deploy IaC 
