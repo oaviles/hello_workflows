@@ -1,4 +1,4 @@
-ssname: Orchestrator Workflow
+name: Orchestrator Workflow
 
 on: workflow_dispatch
 
@@ -104,4 +104,14 @@ jobs:
         uses: oaviles/javascript_action@v1.1
         with:
           message: 'Create Issue QA Env deployment Fail'
+          
+  create-issue-prod-env:
+    if: ${{ failure() }}
+    needs: qa-environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Production Env deployment Fail
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Create Issue Production Env deployment Fail'
           
