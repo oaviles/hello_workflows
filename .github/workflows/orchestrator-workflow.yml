@@ -125,3 +125,14 @@ jobs:
         with:
           message: 'Create Issue Production Env deployment Fail'
           
+          
+  integartion-teting-prod-env:
+    if: ${{ success() }}
+    needs: [prod-environment, dev-environment, qa-environment]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Integration Testing on Production Env
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Integration Testing'
+          
