@@ -60,7 +60,7 @@ jobs:
       - name: Deploy IaC 
         uses: oaviles/javascript_action@v1.1
         with:
-          message: 'Deploy IaC'
+          message1: 'Deploy IaC'
     
     
       - name: Build 
