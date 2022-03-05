@@ -203,9 +203,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Integration Testing on QA Env
-        uses: oaviles/javascript_action@v1.3
+        uses: oaviles/javascript_action@v1.1
         with:
-          message1: 'Integration Testing QA'
+          message: 'Integration Testing QA'
           
    # ------- Testing End ---------------
           
