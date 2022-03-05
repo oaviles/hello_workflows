@@ -55,9 +55,6 @@ jobs:
     if: ${{ success() }}
     needs: test
     runs-on: ubuntu-latest
-    environment:
-      name: qa
-      url: 'https://delightful-flower-012038310.1.azurestaticapps.net'
 
     steps:
       - name: Deploy IaC 
@@ -86,6 +83,10 @@ jobs:
     if: ${{ success() }}
     needs: integration-teting-qa-env
     runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: 'https://delightful-flower-012038310.1.azurestaticapps.net'
+    
     strategy:
       matrix:
         include: 
@@ -204,6 +205,10 @@ jobs:
     if: ${{ success() }}
     needs: [qa-environment]
     runs-on: ubuntu-latest
+    environment:
+      name: qa
+      url: 'https://delightful-flower-012038310.1.azurestaticapps.net'
+    
     steps:
       - name: Integration Testing on QA Env
         uses: oaviles/javascript_action@v1.1
