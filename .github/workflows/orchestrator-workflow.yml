@@ -155,7 +155,7 @@ jobs:
   
   create-issue-qa-env:
     if: ${{ failure() }}
-    needs: qa-environment
+    needs: integration-teting-qa-env
     runs-on: ubuntu-latest
     steps:
       - name: QA Env deployment Fail
