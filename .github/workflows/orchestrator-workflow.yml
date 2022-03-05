@@ -55,6 +55,9 @@ jobs:
     if: ${{ success() }}
     needs: test
     runs-on: ubuntu-latest
+    environment:
+      name: qa
+      url: 'https://delightful-flower-012038310.1.azurestaticapps.net'
 
     steps:
       - name: Deploy IaC 
@@ -205,9 +208,6 @@ jobs:
     if: ${{ success() }}
     needs: [qa-environment]
     runs-on: ubuntu-latest
-    environment:
-      name: qa
-      url: 'https://delightful-flower-012038310.1.azurestaticapps.net'
     
     steps:
       - name: Integration Testing on QA Env
