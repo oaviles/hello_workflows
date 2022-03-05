@@ -81,7 +81,7 @@ jobs:
           
   prod-environment:
     if: ${{ success() }}
-    needs: qa-environment
+    needs: integration-teting-qa-env
     runs-on: ubuntu-latest
     strategy:
       matrix:
