@@ -16,7 +16,8 @@ jobs:
           
   test:
     runs-on: ubuntu-latest
-
+    if: ${{ success() }}
+    needs: build
     steps:
       - name: Test Microservice
         uses: oaviles/javascript_action@v1.1
@@ -25,7 +26,8 @@ jobs:
   
   dev-environment:
     runs-on: ubuntu-latest
-
+    if: ${{ success() }}
+    needs: test
     steps:
       - name: Deploy IaC 
         uses: oaviles/javascript_action@v1.1
