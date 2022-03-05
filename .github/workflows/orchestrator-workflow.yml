@@ -4,6 +4,25 @@ on: workflow_dispatch
 
 jobs:
   # ------- Main Orchestration  ---------------
+  
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Microservice
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Microservice'
+          
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test Microservice
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Test Microservice'
+  
   dev-environment:
     runs-on: ubuntu-latest
 
@@ -32,7 +51,7 @@ jobs:
           
   qa-environment:
     if: ${{ success() }}
-    needs: dev-environment
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
@@ -101,6 +120,26 @@ jobs:
  # ------- Main Orchestration  End ---------------
  
  # ------- If Fail a job ---------------
+
+  create-issue-build:
+    if: ${{ failure() }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Fail
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Fail'
+          
+  create-issue-test:
+    if: ${{ failure() }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Fail
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Test Fail'
 
   create-issue-dev-env:
     if: ${{ failure() }}
