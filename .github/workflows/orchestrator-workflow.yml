@@ -7,7 +7,6 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Build Microservice
         uses: oaviles/javascript_action@v1.1
@@ -29,22 +28,6 @@ jobs:
     if: ${{ success() }}
     needs: test
     steps:
-      - name: Deploy IaC 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Deploy IaC'
-    
-    
-      - name: Build 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Build'
-        
-      - name: Test 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Test'
-          
       - name: Deploy Dev Enviroment
         id: javascriptaction
         uses: oaviles/javascript_action@v1.1
@@ -60,22 +43,6 @@ jobs:
       url: 'https://delightful-flower-012038310.1.azurestaticapps.net'
 
     steps:
-      - name: Deploy IaC 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Deploy IaC'
-    
-    
-      - name: Build 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Build'
-        
-      - name: Test 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Test'
-          
       - name: Deploy QA Enviroment
         id: javascriptaction
         uses: oaviles/javascript_action@v1.1
@@ -100,26 +67,7 @@ jobs:
             site: "WestUS"
             datacenter: "site-west"      
 
-    steps:
-      - name: Deploy IaC 
-        env:
-          SITE: ${{ matrix.site }}
-          DATACENTER: ${{ matrix.datacenter }}
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Deploy IaC'
-    
-    
-      - name: Build 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Build'
-        
-      - name: Test 
-        uses: oaviles/javascript_action@v1.1
-        with:
-          message: 'Test'
-          
+    steps:         
       - name: Deploy Prod Enviroment
         id: javascriptaction
         uses: oaviles/javascript_action@v1.1
