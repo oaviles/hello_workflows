@@ -189,7 +189,7 @@ jobs:
           
   integration-teting-prod-env:
     if: ${{ success() }}
-    needs: [prod-environment, dev-environment, qa-environment]
+    needs: [prod-environment]
     runs-on: ubuntu-latest
     steps:
       - name: Integration Testing on Production Env
