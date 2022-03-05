@@ -203,7 +203,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Integration Testing on QA Env
-        uses: oaviles/javascript_action@v1.1
+        uses: oaviles/javascript_action@v3
         with:
           message1: 'Integration Testing QA'
           
