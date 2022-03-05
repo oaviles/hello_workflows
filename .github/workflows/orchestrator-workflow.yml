@@ -165,7 +165,7 @@ jobs:
           
   create-issue-prod-env:
     if: ${{ failure() }}
-    needs: prod-environment
+    needs: [run-load-testing-prod-env, integration-teting-prod-env]
     runs-on: ubuntu-latest
     steps:
       - name: Production Env deployment Fail
