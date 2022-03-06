@@ -13,7 +13,7 @@ jobs:
         with:
           message: 'Build Microservice'
           
-  test:
+  unit-test:
     runs-on: ubuntu-latest
     if: ${{ success() }}
     needs: build
@@ -22,11 +22,31 @@ jobs:
         uses: oaviles/javascript_action@v1.1
         with:
           message: 'Test Microservice'
+          
+  quality-check:
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    needs: build
+    steps:
+      - name: Code Quality Check
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Code Quality Check'
+          
+  vulnerability-check:
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    needs: build
+    steps:
+      - name: Vulnerabolity Check
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Vulnerabolity Check'
   
   dev-environment:
     runs-on: ubuntu-latest
     if: ${{ success() }}
-    needs: test
+    needs: [unit-test, quality-check, vulnerability-check]
     steps:
       - name: Deploy Dev Enviroment
         id: javascriptaction
@@ -36,7 +56,7 @@ jobs:
           
   qa-environment:
     if: ${{ success() }}
-    needs: test
+    needs: [unit-test, quality-check, vulnerability-check]
     runs-on: ubuntu-latest
     environment:
       name: qa
@@ -90,7 +110,7 @@ jobs:
           
   create-issue-test:
     if: ${{ failure() }}
-    needs: test
+    needs: [unit-test, quality-check, vulnerability-check]
     runs-on: ubuntu-latest
     steps:
       - name: Test Fail
