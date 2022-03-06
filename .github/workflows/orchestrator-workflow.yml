@@ -23,7 +23,7 @@ jobs:
         with:
           message: 'Test Microservice'
           
-  quality-check:
+  code-quality-check:
     runs-on: ubuntu-latest
     if: ${{ success() }}
     needs: build
@@ -46,7 +46,7 @@ jobs:
   dev-environment:
     runs-on: ubuntu-latest
     if: ${{ success() }}
-    needs: [unit-test, quality-check, vulnerability-check]
+    needs: [unit-test, code-quality-check, vulnerability-check]
     steps:
       - name: Deploy Dev Enviroment
         id: javascriptaction
@@ -56,7 +56,7 @@ jobs:
           
   qa-environment:
     if: ${{ success() }}
-    needs: [unit-test, quality-check, vulnerability-check]
+    needs: [unit-test, code-quality-check, vulnerability-check]
     runs-on: ubuntu-latest
     environment:
       name: qa
@@ -110,7 +110,7 @@ jobs:
           
   create-issue-test:
     if: ${{ failure() }}
-    needs: [unit-test, quality-check, vulnerability-check]
+    needs: [unit-test, code-quality-check, vulnerability-check]
     runs-on: ubuntu-latest
     steps:
       - name: Test Fail
