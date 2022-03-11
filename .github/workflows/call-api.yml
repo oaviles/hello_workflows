@@ -1,0 +1,19 @@
+name: Validate_Azure_Credentials
+
+on: workflow_dispatch
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: call httprequest_action v1
+        id: javascriptaction
+        uses: oaviles/httprequest_action @v1
+        with:
+          url: ${{ secrests.API_URL }}
+          path: ${{ secrests.API_PATH }}
+          key: ${{ secrests.API_KEY }}
+        
+      - name: Get the output status
+        run: echo "Status Code ${{ steps.javascriptaction.outputs.status }}"
