@@ -8,7 +8,6 @@ jobs:
 
     steps:
       - name: call httprequest_action v1
-        id: javascriptaction
         uses: oaviles/httprequest_action@v1
         with:
           url: ${{ secrets.API_URL }}
