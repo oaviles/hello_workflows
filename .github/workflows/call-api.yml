@@ -10,7 +10,7 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIALS1 }}
 
   Trigger-API-SendEmail:
     if: ${{ failure() }}
@@ -33,4 +33,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Azure Credential is Working
-        run: echo Azure-Credential-is-Working!
+        run: echo Azure Credential is Working!
