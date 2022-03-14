@@ -10,3 +10,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployment
 - [Use GitHub Actions to deploy](https://github.com/marketplace/actions/azure-static-web-apps-deploy)
+
+
+### Make your choice
+
+```mermaid
+flowchart TD
+    A[Deploy to Prod] --> B{Is it Friday?};
+    B -- Yes --> C[Do not deploy!];
+    B -- No --> D[Run manual-deploy.yml to deploy!];
+    C ----> E[Enjoy yur weekend!];
+    D ----> E[Enjoy yur weekend!];
+```
