@@ -10,11 +10,38 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
-      - name: Build Microservice
+      - name: Build Microservice 1
         uses: oaviles/javascript_action@v1.1
         with:
           message: 'Build Microservice'
+
+      - name: Build Microservice 2
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Microservice'
+          
+      - name: Build Microservice 3
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Microservice'
+          
+      - name: Build Microservice 4
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Microservice'
+          
+      - name: Build Microservice 5
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Microservice'
+          
+      - name: Build Microservice 6
+        uses: oaviles/javascript_action@v1.1
+        with:
+          message: 'Build Microservice'
+    
           
   unit-test:
     runs-on: ubuntu-latest
@@ -51,7 +78,7 @@ jobs:
     if: ${{ success() }}
     needs: [unit-test, code-quality-check, vulnerability-check]
     steps:
-      - name: Deploy Dev Enviroment
+      - name: Deploy Dev Environment
         id: javascriptaction
         uses: oaviles/javascript_action@v1.1
         with:
