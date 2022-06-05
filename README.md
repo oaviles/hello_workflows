@@ -19,6 +19,6 @@ flowchart TD
     A[Deploy to Prod] --> B{Is it Friday?};
     B -- Yes --> C[Do not deploy!];
     B -- No --> D[Run manual-deploy.yml to deploy!];
-    C ----> E[Enjoy yur weekend!];
-    D ----> E[Enjoy yur weekend!];
+    C ----> E[Enjoy your weekend!];
+    D ----> E[Enjoy your weekend!];
 ```
