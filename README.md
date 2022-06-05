@@ -1,4 +1,4 @@
-# Demo about React App, GitHub Action and Azure Static Web Apps
+# PoC about React App, GitHub Action and Azure Static Web Apps
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
