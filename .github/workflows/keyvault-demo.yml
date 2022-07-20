@@ -1,0 +1,40 @@
+name: KeyVault Demo
+
+on: workflow_dispatch
+
+jobs:   
+
+  Validate-Azure-Credentials:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+  Get-KeyVault-Key:
+    if: ${{ success() }}
+    needs:  Validate-Azure-Credentials
+    runs-on: ubuntu-latest
+    steps:
+      # checkout the repo
+      - uses: actions/checkout@v2
+      - uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: Azure/get-keyvault-secrets@v1
+        with: 
+          keyvault: "TollBoothVaultMX1234"
+          secrets: 'cosmosDBAuthorizationKey'
+        id: myGetSecretAction
+        
+      - name: KeyVault Secret Value
+        run: echo "KeyVault Secret Value ${{ steps.myGetSecretAction.outputs.cosmosDBAuthorizationKey }}"
+        
+  Azure-Credential-is-Working:
+    if: ${{ success() }}
+    needs:  Validate-Azure-Credentials
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Credential is Working
+        run: echo Azure Credential is Working!
