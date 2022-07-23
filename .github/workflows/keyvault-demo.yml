@@ -1,3 +1,4 @@
+# Reference: https://docs.microsoft.com/en-us/azure/developer/github/github-key-vault 
 # Reference: https://github.com/Azure/get-keyvault-secrets
 name: KeyVault Demo
 
@@ -26,7 +27,7 @@ jobs:
       - uses: Azure/get-keyvault-secrets@v1
         with: 
           keyvault: "TollBoothVaultMX1234"
-          secrets: 'cosmosDBAuthorizationKey'
+          secrets: 'OASecret'
         id: myGetSecretAction
         
       - name: KeyVault Secret Value
