@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: O Simple Workflow Echo
+name: 0 Simple Workflow Echo
 
 # Controls when the workflow will run
 on: workflow_dispatch
