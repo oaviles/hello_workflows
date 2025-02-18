@@ -1,9 +1,9 @@
 name: Orchestrator Workflow
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+on: workflow_dispatch
+ # push:
+ #   branches: [ main ]
+ # workflow_dispatch:
 
 jobs:
   # ------- Main Orchestration  ---------------
